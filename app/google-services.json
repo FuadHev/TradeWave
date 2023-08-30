@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "15111425174",
+    "project_id": "tradewave-ee8ab",
+    "storage_bucket": "tradewave-ee8ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15111425174:android:c2028f23852462d27486b7",
+        "android_client_info": {
+          "package_name": "com.fuadhev.tradewave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15111425174-t7jo7becqp8kmbjrmfh86gjpqiusdiaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNJaKG1INtMPeZjEqriLzIet6G7pOMxDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15111425174-t7jo7becqp8kmbjrmfh86gjpqiusdiaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
