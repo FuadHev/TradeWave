@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="blue">#064D9A</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#FF40BFFF</color>
     <color name="text_color">#9098B1</color>
     <color name="red">#F70004</color>
     <color name="focused_color">#40BFFF</color>
     <color name="et_border">#EBF0FF</color>
+    <color name="second_text_color">#9098B1</color>
+    <color name="hint">#EBF0FF</color>
+    <color name="discount">#FB7181</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

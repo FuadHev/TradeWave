@@ -78,10 +78,13 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.46")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
-    //Firebase Auth
+    //Firebase
     implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
     implementation("com.google.android.gms:play-services-auth:20.6.0")
-
+    implementation("com.google.firebase:firebase-firestore-ktx:24.7.1")
+    implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.15.1")
@@ -96,6 +99,8 @@ dependencies {
     //MotionToast
     implementation("com.github.Spikeysanju:MotionToast:1.4")
 
+    //Indicator
+    implementation("com.tbuonomo:dotsindicator:5.0")
 
     //Viewpager Implementation
     implementation("androidx.viewpager2:viewpager2:1.0.0")
@@ -121,8 +126,12 @@ dependencies {
     //ImagePicker
     implementation("com.github.dhaval2404:imagepicker:2.1")
 
+    //Timer
+    implementation("com.github.happysingh23828:HappyTimer:1.0.1")
 
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    //Spinner
+    implementation("com.github.chivorns:smartmaterialspinner:1.5.0")
+
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
