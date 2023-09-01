@@ -1,5 +1,6 @@
 package com.fuadhev.tradewave.ui.home.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -16,6 +17,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
     inner class CategoryViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CategoryUiModel) {
+            Log.e("item", item.name )
             binding.category = item
             binding.executePendingBindings()
 

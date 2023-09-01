@@ -1,6 +1,7 @@
 package com.fuadhev.tradewave.domain.repository
 
 import com.fuadhev.tradewave.common.utils.Resource
+import com.fuadhev.tradewave.data.local.dto.FavoriteDTO
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
 import com.fuadhev.tradewave.data.network.dto.ProductsDTO
 import com.fuadhev.tradewave.domain.model.CategoryUiModel
@@ -14,4 +15,8 @@ interface ProductRepository {
     fun getProducts() : Flow<Resource<ProductsDTO>>
     fun getProduct(id:Int) : Flow<Resource<ProductDTO>>
     fun getSearch(query:String) : Flow<Resource<ProductsDTO>>
+    fun addFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
+    fun deleteFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
+    fun getFav() : Flow<Resource<List<FavoriteDTO>>>
+    fun isProductFavorite(id:Int) : Flow<Boolean>
 }

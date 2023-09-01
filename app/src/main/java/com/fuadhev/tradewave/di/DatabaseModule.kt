@@ -3,6 +3,8 @@ package com.fuadhev.tradewave.di
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.fuadhev.tradewave.data.local.FavoriteDAO
+import com.fuadhev.tradewave.data.local.FavoriteDB
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,17 +16,16 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
-//    @Singleton
-//    @Provides
-//    fun provideRoomDatabase(@ApplicationContext context: Context): RoomDatabase =
-//        Room.databaseBuilder(
-//            context,
-//            FavoriteDB::class.java,
-//            "ProductDB"
-//        )
-//            .build()
-//
-//    @Singleton
-//    @Provides
-//    fun provideFavDao(db: FavoriteDB): FavoriteDAO = db.getFavDao()
+    @Singleton
+    @Provides
+    fun provideRoomDatabase(@ApplicationContext context: Context): FavoriteDB =
+        Room.databaseBuilder(
+            context,
+            FavoriteDB::class.java,
+            "ProductDB"
+        ).build()
+
+    @Singleton
+    @Provides
+    fun provideFavDao(db: FavoriteDB): FavoriteDAO = db.getFavDao()
 }

@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.TradeWave" parent="Base.Theme.TradeWave" />
+
+    <style name="CustomBottomBarStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/white</item>
+    </style>
 </resources>

@@ -97,11 +97,12 @@
                 android:layout_marginTop="16dp"
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_min="250dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivOffer"
-                app:spanCount="2"
+
                 tools:listitem="@layout/primary_product_item" />
 
             <androidx.recyclerview.widget.RecyclerView

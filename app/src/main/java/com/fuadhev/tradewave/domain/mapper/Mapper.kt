@@ -1,6 +1,8 @@
 package com.fuadhev.tradewave.domain.mapper
 
+import com.fuadhev.tradewave.data.local.dto.FavoriteDTO
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
+import com.fuadhev.tradewave.domain.model.FavoriteUiModel
 import com.fuadhev.tradewave.domain.model.ProductUiModel
 
 
@@ -24,16 +26,41 @@ object Mapper {
         )
 
 
-//    fun ProductUiModel.toFavoriteDTO() =
-//        FavoriteDTO(
-//            id,
-//            title,
-//            rating,
-//            price,
-//            originalPrice,
-//            discount.toInt(),
-//            images[0]
-//        )
+    fun ProductUiModel.toFavoriteDTO() =
+        FavoriteDTO(
+            id,
+            title,
+            rating,
+            price,
+            originalPrice,
+            discount.toInt(),
+            images[0]
+        )
+
+    fun FavoriteUiModel.toFavoriteDTO() =
+        FavoriteDTO(
+            id,
+            title,
+            rating,
+            price,
+            originalPrice,
+            discount,
+            image
+        )
+
+    fun List<FavoriteDTO>.toFavUiModelList() = map {
+        FavoriteUiModel(
+            it.id,
+            it.title,
+            it.rating,
+            it.price,
+            it.originalPrice,
+            it.discount,
+            it.image
+        )
+    }
+
+
 
     fun List<ProductDTO>.toProductUiList() = map {
         ProductUiModel(

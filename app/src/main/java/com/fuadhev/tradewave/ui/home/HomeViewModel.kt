@@ -49,6 +49,7 @@ class HomeViewModel @Inject constructor(
                     is Resource.Loading -> {
                         _homeState.value = HomeUiState.Loading
                     }
+
                 }
             }
         }
@@ -71,6 +72,7 @@ class HomeViewModel @Inject constructor(
                     is Resource.Loading -> {
                         _homeState.value = HomeUiState.Loading
                     }
+
                 }
             }
         }
@@ -93,6 +95,7 @@ class HomeViewModel @Inject constructor(
                     is Resource.Loading -> {
                         _homeState.value = HomeUiState.Loading
                     }
+
                 }
             }
         }
@@ -116,6 +119,7 @@ class HomeViewModel @Inject constructor(
                     is Resource.Loading -> {
                         _homeState.value = HomeUiState.Loading
                     }
+
                 }
             }
         }
