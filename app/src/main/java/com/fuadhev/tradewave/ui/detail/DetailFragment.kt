@@ -2,6 +2,7 @@ package com.fuadhev.tradewave.ui.detail
 
 import android.util.Log
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.fuadhev.tradewave.R
 import com.fuadhev.tradewave.common.base.BaseFragment
@@ -26,7 +27,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
     private lateinit var mProduct: ProductUiModel
     override fun observeEvents() {
-        viewModel.detailState.observe(viewLifecycleOwner){
+        viewModel.detailState.observe(viewLifecycleOwner) {
             handleState(it)
         }
     }
@@ -38,31 +39,54 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     override fun setupListeners() {
+        with(binding) {
+            ibBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
+
+            btnFav.setOnCheckedChangeListener { _, b ->
+                if (b) {
+                    product?.id?.let { it ->
+                        viewModel.isProductFavorit(it) {
+                            if (!it) {
+                                viewModel.addFav(mProduct)
+                            }
+                        }
+                    }
+                } else {
+                    viewModel.deleteFav(mProduct)
+                }
+            }
+
+
+        }
     }
 
     private fun handleState(state: DetailUiState) {
-        with(binding){
+        with(binding) {
 
-            when(state){
-                is DetailUiState.Loading->{
+            when (state) {
+                is DetailUiState.Loading -> {
                     lyMain.alpha(0.6f)
                     loadingView.visible()
                 }
 
-                is DetailUiState.SuccessProductData->{
+                is DetailUiState.SuccessProductData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
                     setData(state.data)
-                    Log.e("rating", state.data.rating.toString() )
+
                 }
-                is DetailUiState.SuccessFavData->{
+
+                is DetailUiState.SuccessFavData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    state.message?.let {message->
-                        requireActivity().showMessage(message,FancyToast.INFO)
+                    state.message?.let { message ->
+                        requireActivity().showMessage(message, FancyToast.INFO)
                     }
                 }
-                is DetailUiState.Error->{
+
+                is DetailUiState.Error -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
                 }
@@ -70,19 +94,21 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
         }
     }
 
-    private fun setAdapter(){
-        with(binding){
-            vpImage.adapter=imageAdapter
+    private fun setAdapter() {
+        with(binding) {
+            vpImage.adapter = imageAdapter
             springDotsIndicator.attachTo(vpImage)
 
         }
     }
 
-    private fun setData(data:ProductUiModel){
-        binding.product=data
+    private fun setData(data: ProductUiModel) {
+        mProduct = data
+        binding.product = data
         imageAdapter.differ.submitList(data.images)
-        viewModel.isProductFavorit(data.id){
-            binding.btnFav.isChecked=it
+        viewModel.isProductFavorit(data.id) {
+            Log.e("isfav", it.toString())
+            binding.btnFav.isChecked = it
         }
     }
 

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.registerFragment,
 //                R.id.offerProductFragment,
 //                R.id.favouriteFragment,
-//                R.id.detailFragment3,
+                R.id.detailFragment,
                 -> binding.botomMenu.visibility = View.GONE
 
                 else -> binding.botomMenu.visibility = View.VISIBLE

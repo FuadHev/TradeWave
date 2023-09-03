@@ -1,16 +1,21 @@
 package com.fuadhev.tradewave.ui.home.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.fuadhev.tradewave.databinding.ItemProductBinding
 import com.fuadhev.tradewave.domain.model.ProductUiModel
+import com.fuadhev.tradewave.ui.home.HomeFragmentDirections
 
 class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.ProductViewHolder>() {
 
     var onClick: (Int) -> Unit = {}
+
+
 
     inner class ProductViewHolder(val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -18,8 +23,12 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Product
             binding.product = item
             binding.executePendingBindings()
 
+
+
             itemView.setOnClickListener {
                 onClick(item.id)
+
+//                Navigation.findNavController(it).navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(item.id))
             }
         }
     }
@@ -35,6 +44,7 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Product
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
+        holder.itemView
     }
 
     object PopularDiffUtilCallback : DiffUtil.ItemCallback<ProductUiModel>() {

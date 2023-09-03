@@ -26,7 +26,7 @@ class RegisterFragment :BaseFragment<FragmentRegisterBinding>(FragmentRegisterBi
     private val viewModel by viewModels<AuthViewModel>()
     override fun observeEvents() {
         viewModel.authState.observe(viewLifecycleOwner){
-            checkstate(it)
+            checkState(it)
         }
     }
 
@@ -40,7 +40,7 @@ class RegisterFragment :BaseFragment<FragmentRegisterBinding>(FragmentRegisterBi
         }
 
     }
-    private fun checkstate(state:AuthUiState){
+    private fun checkState(state:AuthUiState){
         with(binding){
             when (state) {
                 is AuthUiState.SuccessAuth -> {

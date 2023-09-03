@@ -3,6 +3,7 @@ package com.fuadhev.tradewave.ui.home.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +39,8 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
+
+
     }
 
     object OfferDiffUtilCallback : DiffUtil.ItemCallback<CategoryUiModel>() {
