@@ -43,6 +43,12 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offerProductFragment"
+            app:destination="@id/offerProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -64,5 +70,48 @@
         <action
             android:id="@+id/action_exploreFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.fuadhev.tradewave.ui.explore.productList.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productListFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/filterFragment"
+        android:name="com.fuadhev.tradewave.ui.explore.filter.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/offerProductFragment"
+        android:name="com.fuadhev.tradewave.ui.offer.OfferProductFragment"
+        android:label="OfferProductFragment"
+        tools:layout="@layout/fragment_offer_product">
+        <argument
+            android:name="pOffer"
+            app:argType="com.fuadhev.tradewave.domain.model.OfferUiModel" />
+        <action
+            android:id="@+id/action_offerProductFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offerListFragment"
+        android:name="com.fuadhev.tradewave.ui.offerlist.OfferListFragment"
+        android:label="fragment_offer_list"
+        tools:layout="@layout/fragment_offer_list" />
 </navigation>

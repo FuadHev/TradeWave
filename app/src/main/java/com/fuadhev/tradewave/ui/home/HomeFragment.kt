@@ -47,12 +47,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 //            ibFav.setOnClickListener {
 //                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavouriteFragment())
 //            }
-//            tvCategory.setOnClickListener {
-//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToExploreFragment())
-//            }
-//            offerAdapter.onClick = {
-//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOfferProductFragment(it))
-//            }
+            tvCategory.setOnClickListener {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToExploreFragment())
+            }
+            offerAdapter.onClick = {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOfferProductFragment(it))
+            }
             recommendAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
             }

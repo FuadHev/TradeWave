@@ -30,6 +30,10 @@
     <string name="offer">Offer</string>
     <string name="favorite_product">Favorite Product</string>
 
+    <array name="initial_slider_values">
+        <item>200.0</item>
+        <item>800.0</item>
+    </array>
 
     <string-array name="product_categories">
         <item>smartphones</item>

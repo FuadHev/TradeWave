@@ -143,11 +143,11 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/sort_icon"
                 app:layout_constraintBottom_toBottomOf="@+id/searchView"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintEnd_toStartOf="@+id/ibFilter"
                 app:layout_constraintTop_toTopOf="@+id/searchView" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/ibFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|end"

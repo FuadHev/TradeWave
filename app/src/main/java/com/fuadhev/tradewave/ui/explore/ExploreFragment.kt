@@ -43,18 +43,18 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBind
     override fun setupListeners() {
 
         with(binding) {
-//            categoryAdapter.onClick = {
-//                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToProductListFragment2(it))
-//            }
+            categoryAdapter.onClick = {
+                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToProductListFragment(it))
+            }
             btnBack.setOnClickListener {
                 findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToHomeFragment())
             }
             productAdapter.onClick={
                 findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToDetailFragment(it))
             }
-//            ibFilter.setOnClickListener {
-//                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToFilterFragment())
-//            }
+            ibFilter.setOnClickListener {
+                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToFilterFragment())
+            }
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {

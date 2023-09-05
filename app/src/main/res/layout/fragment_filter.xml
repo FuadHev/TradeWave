@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:backgroundTint="@color/white"
+    android:backgroundTintMode="multiply"
+    android:foregroundTintMode="add"
+    tools:context=".ui.explore.filter.FilterFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/baseline_clear_24"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="clip_vertical|start|center_vertical"
+            android:text="Filter Search"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/springDotsIndicator" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="600dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="90dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="clip_vertical|start|center_vertical"
+                    android:text="Item Location"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView35"
+                    app:layout_constraintTop_toBottomOf="@+id/textView35"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="US Only"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="North America"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Europe"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Asia"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="clip_vertical|start|center_vertical"
+                    android:text="Buying Format"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView33"
+                    app:layout_constraintTop_toBottomOf="@+id/textView33"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="All Listings"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Accepts Offers"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Auction"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Buy It Now"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Classified Ads"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="clip_vertical|start|center_vertical"
+                    android:text="Price Range"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView29"
+                    app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="5dp"
+                        app:boxCornerRadiusBottomStart="5dp"
+                        app:boxCornerRadiusTopEnd="5dp"
+                        app:boxCornerRadiusTopStart="5dp"
+                        app:boxStrokeColor="@color/et_bg"
+                        app:boxStrokeErrorColor="@color/red_connectify"
+                        app:hintEnabled="false"
+                        app:hintTextColor="@color/hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="0"
+                            android:textColor="@color/text_color" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/hint"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="5dp"
+                        app:boxCornerRadiusBottomStart="5dp"
+                        app:boxCornerRadiusTopEnd="5dp"
+                        app:boxCornerRadiusTopStart="5dp"
+                        app:boxStrokeColor="@color/et_bg"
+                        app:boxStrokeErrorColor="@color/red_connectify"
+                        app:hintEnabled="false"
+                        app:hintTextColor="@color/hint">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/etMax"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:hint="Max"
+                            android:textColor="@color/text_color" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Min"
+                    android:textColor="@color/second_text_color"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@+id/rangeSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Max"
+                    android:textColor="@color/second_text_color"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/rangeSlider"
+                    app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+                <com.google.android.material.slider.RangeSlider
+                    android:id="@+id/rangeSlider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="5dp"
+                    android:labelFor="@id/textView31"
+                    android:valueFrom="0.0"
+                    android:valueTo="1000.0"
+                    app:haloColor="#B078CAF3"
+                    app:haloRadius="20dp"
+                    app:labelBehavior="floating"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:minSeparation="20dp"
+                    app:thumbColor="@color/blue"
+                    app:trackColorActive="@color/blue"
+                    app:trackColorInactive="@color/hint"
+                    app:values="@array/initial_slider_values" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="clip_vertical|start|center_vertical"
+                    android:text="Condition"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView34"
+                    app:layout_constraintTop_toBottomOf="@+id/textView34"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="New"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Used"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/CustomChipBtnStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Not Specified"
+                        android:textColor="@color/item_selector"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipCornerRadius="5dp"
+                        app:chipEndPadding="20dp"
+                        app:chipStartPadding="20dp"
+                        app:chipStrokeColor="@color/stroke_bg" />
+                </com.google.android.material.chip.ChipGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnApply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="16dp"
+        android:text="Apply"
+        android:textColor="@color/white"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/hint">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

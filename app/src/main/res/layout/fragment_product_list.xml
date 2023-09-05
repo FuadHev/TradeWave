@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="category"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".presentation.ui.explore.productList.ProductListFragment">
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:capitalize="words"
+                android:ems="10"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{category}"
+                android:textColor="@color/text_color"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintStart_toEndOf="@+id/ibBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/arrow_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_icon2"
+                app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner
+            android:id="@+id/spinner2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvResult2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvResult2"
+            app:smsp_arrowColor="@color/second_text_color"
+            app:smsp_hint="Category"
+            app:smsp_hintColor="@color/second_text_color"
+            app:smsp_itemColor="@color/text_color"
+            app:smsp_itemListColor="@color/text_color"
+            app:smsp_itemListHintBackgroundColor="#808080"
+            app:smsp_itemListHintColor="#FFFFFF"
+            app:smsp_multilineError="false"
+            app:smsp_selectedItemListColor="@color/blue"
+            app:smsp_underlineSize="0dp" />
+
+        <TextView
+            android:id="@+id/tvResult2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/second_text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProduct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2"
+            app:spanCount="2"
+            tools:listitem="@layout/primary_product_item" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingView2"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
