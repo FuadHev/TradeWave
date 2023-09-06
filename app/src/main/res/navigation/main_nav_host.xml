@@ -49,6 +49,12 @@
         <action
             android:id="@+id/action_homeFragment_to_offerProductFragment"
             app:destination="@id/offerProductFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -114,4 +120,13 @@
         android:name="com.fuadhev.tradewave.ui.offerlist.OfferListFragment"
         android:label="fragment_offer_list"
         tools:layout="@layout/fragment_offer_list" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.fuadhev.tradewave.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>

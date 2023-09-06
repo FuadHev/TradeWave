@@ -44,9 +44,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun setupListeners() {
         with(binding){
-//            ibFav.setOnClickListener {
-//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavouriteFragment())
-//            }
+            ibFav.setOnClickListener {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavoriteFragment())
+            }
             tvCategory.setOnClickListener {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToExploreFragment())
             }
@@ -59,9 +59,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             popularProductAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
             }
-//            categoryAdapter.onClick = {
-//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProductListFragment2(it))
-//            }
+            categoryAdapter.onClick = {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProductListFragment(it))
+            }
 
         }
 

@@ -2,11 +2,13 @@ package com.fuadhev.tradewave.common.utils
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.androchef.happytimer.countdowntimer.DynamicCountDownView
 import com.androchef.happytimer.countdowntimer.HappyTimer
 import com.fuadhev.tradewave.R
+import com.google.android.material.snackbar.Snackbar
 import com.shashank.sony.fancytoastlib.FancyToast
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -19,7 +21,16 @@ object Extensions {
     ) {
         FancyToast.makeText(this,message, FancyToast.LENGTH_SHORT,style,false).show()
     }
-
+    fun View.showSnack(
+        message: String,
+        duration: Int = Snackbar.LENGTH_SHORT,
+    ) {
+        Snackbar.make(this, message, duration)
+            .setBackgroundTint(Color.parseColor("#40BFFF"))
+            .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
+            .setTextColor(Color.WHITE)
+            .show()
+    }
     fun List<View>.goneEach(){
         this.forEach{
             it.gone()
