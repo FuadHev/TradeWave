@@ -117,9 +117,13 @@
     </fragment>
     <fragment
         android:id="@+id/offerListFragment"
-        android:name="com.fuadhev.tradewave.ui.offerlist.OfferListFragment"
+        android:name="com.fuadhev.tradewave.ui.offerList.OfferListFragment"
         android:label="fragment_offer_list"
-        tools:layout="@layout/fragment_offer_list" />
+        tools:layout="@layout/fragment_offer_list" >
+        <action
+            android:id="@+id/action_offerListFragment_to_offerProductFragment"
+            app:destination="@id/offerProductFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.fuadhev.tradewave.ui.favorite.FavoriteFragment"

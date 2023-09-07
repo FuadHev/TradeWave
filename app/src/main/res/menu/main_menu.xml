@@ -23,6 +23,7 @@
         />
 
     <item
+        android:id="@+id/offerListFragment"
         android:title="@string/offer"
         android:icon="@drawable/offer_icon"
         app:showAsAction="always"
