@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fuadhev.tradewave.common.utils.Resource
 import com.fuadhev.tradewave.common.utils.SharedPrefManager
-import com.fuadhev.tradewave.domain.usecase.LoginUseCase
-import com.fuadhev.tradewave.domain.usecase.RegisterUseCase
+import com.fuadhev.tradewave.domain.model.UserUiModel
+import com.fuadhev.tradewave.domain.usecase.AuthUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.collectLatest
@@ -16,8 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase,
-    private val registerUseCase: RegisterUseCase,
+    private val authUseCase: AuthUseCase,
     private val sp: SharedPrefManager
 ) : ViewModel() {
 
@@ -25,10 +24,10 @@ class AuthViewModel @Inject constructor(
     val authState: LiveData<AuthUiState> get() = _authState
 
 
-    fun loginUser(email: String, password: String) {
+    fun loginUser(email: String, password: String,userUiModel: UserUiModel) {
         viewModelScope.launch(IO) {
 
-            loginUseCase.invoke(email, password).collectLatest {
+            authUseCase.loginUser(email, password).collectLatest {
 
                 when (it) {
                     is Resource.Loading -> {
@@ -38,6 +37,7 @@ class AuthViewModel @Inject constructor(
                     is Resource.Success -> {
                         sp.saveToken(it.data?.user?.uid)
                         _authState.postValue(AuthUiState.SuccessAuth)
+                        addUser(userUiModel)
                     }
 
                     is Resource.Error -> {
@@ -53,7 +53,7 @@ class AuthViewModel @Inject constructor(
     }
     fun registerUser(email: String, password: String) {
         viewModelScope.launch {
-            registerUseCase(email, password).collectLatest {
+            authUseCase.registerUser(email, password).collectLatest {
                 when (it) {
                     is Resource.Loading -> {
                         _authState.postValue(AuthUiState.Loading)
@@ -71,6 +71,45 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    private fun addUser(userUiModel: UserUiModel) {
+        viewModelScope.launch {
+            authUseCase.addUser(userUiModel).collectLatest {
+                when(it){
+                    is Resource.Loading -> {
+                        _authState.postValue(AuthUiState.Loading)
+                    }
+
+                    is Resource.Success -> {
+                        _authState.postValue(AuthUiState.SuccessAuth)
+                    }
+
+                    is Resource.Error -> {
+                        _authState.postValue(AuthUiState.Error(it.exception))
+                    }
+                }
+            }
+        }
+    }
+    fun logoutUser() {
+        viewModelScope.launch {
+            authUseCase.logoutUser().collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        _authState.postValue(AuthUiState.Loading)
+                    }
+
+                    is Resource.Success -> {
+                        sp.saveToken("")
+                        _authState.postValue(AuthUiState.SuccessAuth)
+                    }
+
+                    is Resource.Error -> {
+                        _authState.postValue(AuthUiState.Error(it.exception))
+                    }
+                }
+            }
+        }
+    }
 
 
 

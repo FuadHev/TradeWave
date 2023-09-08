@@ -14,6 +14,7 @@ import com.fuadhev.tradewave.common.utils.Extensions.showMessage
 import com.fuadhev.tradewave.common.utils.Extensions.visible
 import com.fuadhev.tradewave.common.utils.ValidationHelper
 import com.fuadhev.tradewave.databinding.FragmentLoginBinding
+import com.fuadhev.tradewave.domain.model.UserUiModel
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -54,7 +55,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         with(binding) {
             if (helper.validateData(etEmail, etPassword, tlEmail, tlPassword)) {
-                viewModel.loginUser(etEmail.text.toString().trim(), etPassword.text.toString().trim())
+                viewModel.loginUser(etEmail.text.toString().trim(), etPassword.text.toString().trim(),
+                    UserUiModel(uid=etEmail.text.toString().trim(), email = etEmail.text.toString().trim())
+                )
             }
         }
     }
@@ -63,6 +66,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         with(binding) {
             when (state) {
                 is AuthUiState.SuccessAuth -> {
+                    findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                     requireActivity().showMessage("Succesfully Sing in", FancyToast.SUCCESS)
                     loading.gone()
                 }

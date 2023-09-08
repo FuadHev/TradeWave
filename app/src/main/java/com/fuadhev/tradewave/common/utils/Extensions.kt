@@ -5,9 +5,12 @@ import android.content.Context
 import android.graphics.Color
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.androchef.happytimer.countdowntimer.DynamicCountDownView
 import com.androchef.happytimer.countdowntimer.HappyTimer
 import com.fuadhev.tradewave.R
+import com.fuadhev.tradewave.ui.profile.account.AccountFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import com.shashank.sony.fancytoastlib.FancyToast
 import java.text.SimpleDateFormat
@@ -31,6 +34,11 @@ object Extensions {
             .setTextColor(Color.WHITE)
             .show()
     }
+
+    fun Fragment.toEditFragment(info:InfoEnum) {
+        findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToEditAccountFragment(info))
+    }
+
     fun List<View>.goneEach(){
         this.forEach{
             it.gone()

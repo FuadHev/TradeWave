@@ -1,6 +1,7 @@
 package com.fuadhev.tradewave.ui.splash
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     override fun observeEvents() {
         viewModel.authData.observe(viewLifecycleOwner){
             auth=it
+            Log.e("auth", auth.toString() )
         }
     }
 
@@ -46,6 +48,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
             if (!helper.isInternetAvailable()) {
                 showNoInternetDialog()
             }else{
+
                 if (auth) {
                     findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToHomeFragment())
                 } else {
