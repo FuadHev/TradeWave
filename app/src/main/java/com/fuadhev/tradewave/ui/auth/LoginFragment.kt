@@ -55,8 +55,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
         with(binding) {
             if (helper.validateData(etEmail, etPassword, tlEmail, tlPassword)) {
-                viewModel.loginUser(etEmail.text.toString().trim(), etPassword.text.toString().trim(),
-                    UserUiModel(uid=etEmail.text.toString().trim(), email = etEmail.text.toString().trim())
+                viewModel.loginUser(etEmail.text.toString().trim(), etPassword.text.toString().trim()
                 )
             }
         }
@@ -79,6 +78,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 is AuthUiState.Loading -> {
                     loading.visible()
                 }
+
+                else -> {}
             }
         }
 

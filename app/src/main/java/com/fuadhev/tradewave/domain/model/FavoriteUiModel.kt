@@ -10,5 +10,5 @@ data class FavoriteUiModel(
     val image : String,
 ){
     fun formatPrice() = "$ $price"
-    fun formatDiscount() = "% ${discount} Off "
+    fun formatDiscount() = "% $discount Off "
 }

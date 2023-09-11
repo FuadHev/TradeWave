@@ -13,6 +13,7 @@ import com.fuadhev.tradewave.common.utils.Extensions.showMessage
 import com.fuadhev.tradewave.common.utils.Extensions.visible
 import com.fuadhev.tradewave.common.utils.ValidationHelper
 import com.fuadhev.tradewave.databinding.FragmentRegisterBinding
+import com.fuadhev.tradewave.domain.model.UserUiModel
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -56,6 +57,8 @@ class RegisterFragment :BaseFragment<FragmentRegisterBinding>(FragmentRegisterBi
                 is AuthUiState.Loading -> {
                     loading.visible()
                 }
+
+                else -> {}
             }
         }
 
@@ -63,7 +66,14 @@ class RegisterFragment :BaseFragment<FragmentRegisterBinding>(FragmentRegisterBi
     private fun validateData(){
         with(binding){
             if (helper.validateData(etEmail,etPassword,tlEmail,tlPassword)&&helper.validateRegisterData(etPassword,etPassword2,etFullname,tlPassword2,tlFullname)){
-                viewModel.registerUser(etEmail.text.toString().trim(),etPassword.text.toString().trim())
+                viewModel.registerUser(etEmail.text.toString().trim(),etPassword.text.toString().trim(),
+                    UserUiModel(
+                        uid = etEmail.text.toString().trim(),
+                        firstname = etFullname.text.toString().split(" ")[0] ?: "",
+                        lastname  = etFullname.text.toString().split(" ")[1] ?: "",
+                        email = etEmail.text.toString().trim()
+                    )
+                )
             }
         }
 

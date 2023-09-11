@@ -1,13 +1,8 @@
 package com.fuadhev.tradewave.ui.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.fuadhev.tradewave.R
 import com.fuadhev.tradewave.common.base.BaseFragment
 import com.fuadhev.tradewave.common.utils.Extensions.alpha
 import com.fuadhev.tradewave.common.utils.Extensions.gone
@@ -53,12 +48,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             offerAdapter.onClick = {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOfferProductFragment(it))
             }
+
+
             recommendAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
             }
+
+
             popularProductAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
             }
+
             categoryAdapter.onClick = {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProductListFragment(it))
             }
@@ -102,6 +102,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                     lyMain.alpha(0.6f)
                     listOf(loading,loading2,loading3,loading4).visibleEach()
                 }
+
+                else -> {}
             }
         }
 

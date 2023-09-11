@@ -55,6 +55,8 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Loading)
         val categoryList = mutableListOf<CategoryUiModel>()
         val categorySnapshot = firestore.collection("categories").get().await()
+
+
         for (documentSnapshot in categorySnapshot.documents) {
             val categoryUiModel = documentSnapshot.toObject(CategoryUiModel::class.java)
             categoryUiModel?.let {

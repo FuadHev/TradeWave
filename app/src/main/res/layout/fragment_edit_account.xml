@@ -28,24 +28,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider12">
 
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
-
             <TextView
                 android:id="@+id/textView54"
                 android:layout_width="0dp"
@@ -88,8 +70,8 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center|start"
+                    android:hint="******"
                     android:inputType="textPassword"
-                    android:text="1254648"
                     android:textColor="@color/text_color">
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -108,24 +90,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider12">
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
 
             <TextView
                 android:id="@+id/textView53"
@@ -163,11 +127,12 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="center|start"
-                    android:hint="@{user.phoneNumber}"
+                    android:hint="@{user.phonenumber}"
                     android:textColor="@color/text_color">
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -199,24 +164,6 @@
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
 
             <TextView
                 android:id="@+id/textView52"
@@ -255,6 +202,7 @@
                 app:startIconTint="@color/blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -278,24 +226,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider12">
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
 
             <TextView
                 android:id="@+id/textView50"
@@ -334,6 +264,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView50">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBirthday"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -356,25 +287,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider12">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCheckout2"
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
 
             <TextView
                 android:id="@+id/textView48"
@@ -413,7 +325,7 @@
 
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
+                    android:id="@+id/etGender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/poppins_regular"
@@ -472,25 +384,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider12">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCheckout3"
-                android:layout_width="0dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:padding="16dp"
-                android:text="Save"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:rippleColor="@color/hint" />
-
             <TextView
                 android:id="@+id/textView51"
                 android:layout_width="0dp"
@@ -523,9 +416,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView51">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@{user.lastName}"
+                    android:hint="@{user.lastname}"
                     android:textColor="@color/text_color" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -565,12 +459,33 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView47">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLastName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@{user.firstName}"
+                    android:hint="@{user.firstname}"
                     android:textColor="@color/text_color" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="16dp"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="@color/hint" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

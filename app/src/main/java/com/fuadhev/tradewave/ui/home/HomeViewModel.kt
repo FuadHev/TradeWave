@@ -26,10 +26,10 @@ class HomeViewModel @Inject constructor(
 
 
     init {
-        getCategories()
-        getPopular()
-        getOffers()
-        getRecommend()
+        getCategories()//10
+        getPopular()//20
+        getOffers()//5
+        getRecommend()//30
     }
 
 

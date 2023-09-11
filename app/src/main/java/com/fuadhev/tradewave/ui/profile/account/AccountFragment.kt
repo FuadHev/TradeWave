@@ -28,21 +28,26 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         }
     }
 
-    private fun handleState(it: AuthUiState) {
-        when(it){
+    private fun handleState(state: AuthUiState) {
+        when(state){
             is AuthUiState.SuccessAuth->{
                 requireView().showSnack("Succesfully log out")
                 findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
             }
             is AuthUiState.Error->{
-                requireActivity().showMessage(it.message, FancyToast.ERROR)
+                requireActivity().showMessage(state.message, FancyToast.ERROR)
+            }
+            is AuthUiState.SuccessUserInfo->{
+                binding.user=state.data
             }
             is AuthUiState.Loading->{}
+
+            else -> {}
         }
     }
 
     override fun onCreateFinish() {
-
+        authViewModel.getUserInfo()
     }
 
     override fun setupListeners() {

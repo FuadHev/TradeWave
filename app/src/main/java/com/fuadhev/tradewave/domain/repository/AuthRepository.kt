@@ -1,5 +1,6 @@
 package com.fuadhev.tradewave.domain.repository
 
+import com.fuadhev.tradewave.common.utils.InfoEnum
 import com.fuadhev.tradewave.common.utils.Resource
 import com.fuadhev.tradewave.domain.model.UserUiModel
 import com.google.firebase.auth.AuthResult
@@ -11,7 +12,10 @@ interface AuthRepository {
     fun loginUser(email: String, password: String): Flow<Resource<AuthResult>>
     fun registerUser(email: String, password: String): Flow<Resource<AuthResult>>
     fun getUserData(): Flow<Resource<FirebaseUser>>
+    fun getUserInfo(): Flow<Resource<UserUiModel>>
     fun logOutUser(): Flow<Resource<Boolean>>
-    fun addUser(userUiModel: UserUiModel): Flow<Resource<Boolean>>
+     fun addUser(userUiModel: UserUiModel): Flow<Resource<Boolean>>
+
+     fun updateUser(info: InfoEnum, updatedData: String): Flow<Resource<Boolean>>
 
 }

@@ -7,6 +7,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.fuadhev.tradewave.R
 import com.fuadhev.tradewave.databinding.ItemCategoryBinding
 import com.fuadhev.tradewave.domain.model.CategoryUiModel
 
@@ -15,16 +17,26 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
 
     var onClick: (String) -> Unit = {}
 
+
+
+
+
     inner class CategoryViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CategoryUiModel) {
             Log.e("item", item.name )
-            binding.category = item
-            binding.executePendingBindings()
+            with(binding){
+
+                category = item
+                executePendingBindings()
+
+            }
+
 
             itemView.setOnClickListener {
                 onClick(item.slug)
             }
+
         }
     }
 
@@ -41,13 +53,21 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
         holder.bind(differ.currentList[position])
 
 
+
+
+
+
     }
+
+//    fun update(list:ArrayList<CategoryUiModel>){
+//        this.
+//        notifyDataSetChanged()
+//    }
 
     object OfferDiffUtilCallback : DiffUtil.ItemCallback<CategoryUiModel>() {
         override fun areItemsTheSame(oldItem: CategoryUiModel, newItem: CategoryUiModel): Boolean {
             return oldItem.id == newItem.id
         }
-
         override fun areContentsTheSame(
             oldItem: CategoryUiModel,
             newItem: CategoryUiModel,

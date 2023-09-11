@@ -19,9 +19,7 @@ class SplashViewModel @Inject constructor(private val sp:SharedPrefManager) :Vie
 
     private fun getAuthData(){
 
-        if (sp.getToken()==""){
-            _authData.postValue(false)
-        }else if (sp.getToken()==null){
+        if (sp.getToken()=="" || sp.getToken()==null){
             _authData.postValue(false)
         }else{
             _authData.postValue(true)

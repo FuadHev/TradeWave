@@ -305,7 +305,7 @@
                     android:layout_marginEnd="16dp"
                     android:fontFamily="@font/poppins_regular"
                     android:gravity="clip_vertical|start|center_vertical"
-                    android:text="@{user.phoneNumber}"
+                    android:text="@{user.phonenumber}"
                     android:textColor="@color/second_text_color"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
