@@ -176,4 +176,9 @@
         android:name="com.fuadhev.tradewave.ui.profile.order.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.fuadhev.tradewave.ui.cart.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
 </navigation>

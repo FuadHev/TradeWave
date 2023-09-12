@@ -1,7 +1,9 @@
 package com.fuadhev.tradewave.domain.mapper
 
+import com.fuadhev.tradewave.data.local.cart.CartDTO
 import com.fuadhev.tradewave.data.local.dto.FavoriteDTO
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
+import com.fuadhev.tradewave.domain.model.CartUiModel
 import com.fuadhev.tradewave.domain.model.FavoriteUiModel
 import com.fuadhev.tradewave.domain.model.ProductUiModel
 
@@ -37,6 +39,35 @@ object Mapper {
             images[0]
         )
 
+
+    fun CartUiModel.toCartDTO() =
+        CartDTO(
+            id,
+            title,
+            price,
+            image,
+            isFavorite,
+            quantity
+        )
+    fun ProductUiModel.toCartDTO(favorite:Boolean) =
+        CartDTO(
+            id,
+            title,
+            price,
+            images[0],
+            favorite,
+            1
+        )
+    fun List<CartDTO>.toCartUiList() = map {
+        CartUiModel(
+            it.id,
+            it.title,
+            it.price,
+            it.image,
+            it.isFavorite,
+            it.quantity
+        )
+    }
     fun FavoriteUiModel.toFavoriteDTO() =
         FavoriteDTO(
             id,

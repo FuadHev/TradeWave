@@ -5,13 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fuadhev.tradewave.common.utils.Resource
+import com.fuadhev.tradewave.data.local.cart.CartDTO
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
 import com.fuadhev.tradewave.domain.mapper.Mapper.toFavoriteDTO
 import com.fuadhev.tradewave.domain.mapper.Mapper.toProductUiModel
 import com.fuadhev.tradewave.domain.model.ProductUiModel
+import com.fuadhev.tradewave.domain.usecase.CartUseCase
 import com.fuadhev.tradewave.domain.usecase.GetProductUseCase
 import com.fuadhev.tradewave.domain.usecase.local.FavUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,7 +22,8 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val getProductUseCase: GetProductUseCase,
-    private val favUseCase: FavUseCase
+    private val favUseCase: FavUseCase,
+    private val cartUseCase: CartUseCase
 ) : ViewModel() {
 
     private val _detailState=MutableLiveData<DetailUiState>()
@@ -82,6 +86,12 @@ class DetailViewModel @Inject constructor(
             favUseCase.isFavorite(productId).collectLatest {
                 callback(it)
             }
+        }
+    }
+
+    fun addCartProduct(product:CartDTO){
+        viewModelScope.launch(IO) {
+            cartUseCase.addProduct(product)
         }
     }
 

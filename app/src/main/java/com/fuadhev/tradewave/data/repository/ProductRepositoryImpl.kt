@@ -3,6 +3,8 @@ package com.fuadhev.tradewave.data.repository
 import android.util.Log
 import com.fuadhev.tradewave.common.utils.Resource
 import com.fuadhev.tradewave.data.local.FavoriteDAO
+import com.fuadhev.tradewave.data.local.cart.CartDAO
+import com.fuadhev.tradewave.data.local.cart.CartDTO
 import com.fuadhev.tradewave.data.local.dto.FavoriteDTO
 import com.fuadhev.tradewave.data.network.api.ProductApiService
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
@@ -24,7 +26,8 @@ class ProductRepositoryImpl @Inject constructor(
     private val firestore: FirebaseFirestore,
     private val storage: StorageReference,
     private val productApiService: ProductApiService,
-    private val favoriteDAO: FavoriteDAO
+    private val favoriteDAO: FavoriteDAO,
+    private val cartDAO: CartDAO,
 ) : ProductRepository {
 
 
@@ -137,5 +140,19 @@ class ProductRepositoryImpl @Inject constructor(
         emit(response)
     }.flowOn(Dispatchers.IO)
 
+    override  fun addCart(product: CartDTO) {
+        cartDAO.addCart(product)
+    }
+
+    override  fun deleteCart(product: CartDTO) {
+        cartDAO.deleteCart(product)
+    }
+
+    override  fun getCart(): Flow<Resource<List<CartDTO>>> = flow {
+        emit(Resource.Loading)
+        emit(Resource.Success(cartDAO.getCart()))
+    }.catch {
+        emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }
 
 }

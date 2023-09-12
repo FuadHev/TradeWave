@@ -14,6 +14,8 @@
     <string name="password_required">Password required\n</string>
     <string name="password_again">Password again</string>
     <string name="password">Password</string>
+    <string name="price_double">$ %.2f</string>
+    <string name="price">$ %d</string>
     <string name="full_name">Full name</string>
     <string name="let_s_get_started">Let’s Get Started</string>
     <string name="create_a_new_a_ccount">Create a new account</string>
@@ -22,6 +24,7 @@
     <string name="more_category">More Category</string>
     <string name="original_price"><strike>$ %.2f</strike></string>
     <string name="flash_sale">Flash Sale</string>
+    <string name="item_size">Items (%d) </string>
     <string name="it_seems_there_is_no_product_here">It seems there is no product here</string>
     <string name="cart">Cart</string>
     <string name="explore">Explore</string>

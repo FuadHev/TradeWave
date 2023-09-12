@@ -9,8 +9,10 @@ import com.fuadhev.tradewave.common.base.BaseFragment
 import com.fuadhev.tradewave.common.utils.Extensions.alpha
 import com.fuadhev.tradewave.common.utils.Extensions.gone
 import com.fuadhev.tradewave.common.utils.Extensions.showMessage
+import com.fuadhev.tradewave.common.utils.Extensions.showSnack
 import com.fuadhev.tradewave.common.utils.Extensions.visible
 import com.fuadhev.tradewave.databinding.FragmentDetailBinding
+import com.fuadhev.tradewave.domain.mapper.Mapper.toCartDTO
 import com.fuadhev.tradewave.domain.model.ProductUiModel
 import com.fuadhev.tradewave.ui.detail.adapter.ImageAdapter
 import com.shashank.sony.fancytoastlib.FancyToast
@@ -57,6 +59,16 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                     viewModel.deleteFav(mProduct)
                 }
             }
+
+            btnAddCart.setOnClickListener {
+                viewModel.isProductFavorit(args.id) {
+                    viewModel.addCartProduct(
+                        mProduct.toCartDTO(it)
+                    )
+                }
+                requireView().showSnack("Added to cart")
+            }
+
 
 
         }

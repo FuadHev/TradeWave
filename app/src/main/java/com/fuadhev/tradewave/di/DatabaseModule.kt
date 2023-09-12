@@ -5,6 +5,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fuadhev.tradewave.data.local.FavoriteDAO
 import com.fuadhev.tradewave.data.local.FavoriteDB
+import com.fuadhev.tradewave.data.local.cart.CartDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,4 +29,8 @@ object DatabaseModule {
     @Singleton
     @Provides
     fun provideFavDao(db: FavoriteDB): FavoriteDAO = db.getFavDao()
+
+    @Singleton
+    @Provides
+    fun provideCartDao(db: FavoriteDB): CartDAO = db.getCartDao()
 }

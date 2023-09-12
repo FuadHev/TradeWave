@@ -15,6 +15,7 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/cartFragment"
         android:icon="@drawable/cart_icon"
         android:title="@string/cart"
         app:showAsAction="ifRoom" />
