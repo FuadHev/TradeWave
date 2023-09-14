@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import com.fuadhev.tradewave.common.utils.Constants.APP_LANG
 import com.fuadhev.tradewave.common.utils.Constants.PHOTO_USER
 import com.fuadhev.tradewave.common.utils.Constants.SP_NAME
 import com.fuadhev.tradewave.common.utils.Constants.TOKEN_USER
@@ -24,7 +25,14 @@ class SharedPrefManager (private val context: Context) {
         )
     }
 
+    fun saveLang(lang: String?) {
+        with(sharedPreferences.edit()) {
+            putString(APP_LANG, lang)
+            apply()
+        }
+    }
 
+    fun getLang() = sharedPreferences.getString(APP_LANG, "en")
     fun saveToken(token: String?) {
         with(sharedPreferences.edit()) {
             putString(TOKEN_USER, token)

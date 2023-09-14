@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tradevawe</string>
+    <string name="welcome_to_busybag">Tradevawe-ə xoş gəldiniz</string>
+    <string name="sign_in_to_continue">Davam etmək üçün daxil olun</string>
+    <string name="your_email">Sizin Email</string>
+    <string name="sign_in">Daxil ol</string>
+    <string name="sign_up">Qeydiyyat</string>
+    <string name="already_have_an_account">Artıq hesabınız var?</string>
+    <string name="forgot_password">Şifrəni unutdunuz?</string>
+    <string name="register">Qeydiyyatdan keçin</string>
+    <string name="don_t_have_an_account">Hesabınız yoxdur?</string>
+    <string name="invalid_email_format">Yanlış Email formatı</string>
+    <string name="password_required">Şifrə tələb olunur\n</string>
+    <string name="password_again">Şifrə yenidən</string>
+    <string name="password">Şifrə</string>
+    <string name="full_name">Tam ad</string>
+    <string name="let_s_get_started">Başlayaq</string>
+    <string name="create_a_new_a_ccount">Yeni hesab yarat</string>
+    <string name="category">Kateqoriya</string>
+    <string name="see_more">Daha çox göstər</string>
+    <string name="more_category">Daha çox kateqoriya</string>
+    <string name="original_price"><strike>$ %.2f</strike></string>
+    <string name="price_double">$ %.2f</string>
+    <string name="price">$ %d</string>
+    <string name="item_size">Məhsullar (%d) </string>
+    <string name="flash_sale">Ən çox satılan</string>
+    <string name="it_seems_there_is_no_product_here">Görünür ki, burada heç bir məhsul yoxdur</string>
+    <string name="cart">Səbət</string>
+    <string name="explore">Araşdır</string>
+    <string name="home">Əsas səhifə</string>
+    <string name="account">Hesab</string>
+    <string name="profile">Profil</string>
+    <string name="offer">Təklif</string>
+    <string name="favorite_product">Sevimli məhsullar</string>
+    <string name="apply">Tətbiq et</string>
+    <string name="passwordE">********</string>
+    <string name="change_password">Şifrəni dəyiş</string>
+    <string name="phone_number">Telefon nömrəsi</string>
+    <string name="email">Email</string>
+    <string name="birthday">Təvəllüd</string>
+    <string name="gender">Cins</string>
+    <string name="deleted">Silindi</string>
+    <string name="there_is_no_product_here">Burada heç bir məhsul yoxdur</string>
+    <string name="order">Sifariş</string>
+    <string name="address">Adres</string>
+    <string name="payment">Ödəniş</string>
+    <string name="app_language">Tədbiq dili :</string>
+    <string name="your_cart">Səbətin</string>
+    <string name="enter_cupon_code">Kupon kodunu daxil edin</string>
+    <string name="shipping">Çatdırılma</string>
+    <string name="import_charges">İdxal ödənişləri</string>
+    <string name="total_price">Ümumi məbləğ</string>
+    <string name="check_out">Yoxla</string>
+    <string name="add_to_cart">Səbətə əlavə et</string>
+    <string name="select_color">Rəng seç</string>
+    <string name="specification">Spesifikasiya</string>
+    <string name="review_product">Məhsul şərhləri</string>
+    <string name="brand">Brend:</string>
+    <string name="categoryI">Kateqoriya:</string>
+    <string name="stock">Səhm:</string>
+    <string name="we_will_send_verification_to_your_new_email">Yeni E-poçtunuza doğrulama göndərəcəyik</string>
+    <string name="change_email">E-poçt dəyiş</string>
+    <string name="last_name">Soyad</string>
+    <string name="first_name">Ad</string>
+    <string name="save">Yadda Saxla</string>
+    <string name="_0_result">0 Nəticə</string>
+    <string name="back_to_home">Əsas səhifəyə qayıt</string>
+    <string name="thank_you_for_shopping_using_busybag">BusyBag istifadə edərək alış-veriş etdiyiniz üçün təşəkkür edirik</string>
+    <string name="product_not_found">Məhsul tapılmadı</string>
+    <string name="all_categories">Bütün kateqoriyalar</string>
+    <string name="log_out">Çıxış</string>
+    <string name="filter_search">Axtarış filtri</string>
+    <string name="item_location">Məhsulun yeri</string>
+    <string name="us_only">Yalnız ABŞ</string>
+    <string name="north_america">Şimali Amerika</string>
+    <string name="europe">Avropa</string>
+    <string name="asia">Asya</string>
+    <string name="buying_format">Ödəniş formatı</string>
+    <string name="all_listings">Bütün Siyahılar</string>
+    <string name="accepts_offers">Təklifləri Qəbul Edir</string>
+    <string name="auction">Müzayiə</string>
+    <string name="buy_it_now">Həmin An Al</string>
+    <string name="classified_ads">Sınıflandırılmış Elanlar</string>
+    <string name="price_range">Qiymət Aralığı</string>
+    <string name="max">Maks</string>
+    <string name="condition">Vəziyyət</string>
+    <string name="yeni" translatable="false">Yeni</string>
+    <string name="used">Ikinci əl</string>
+    <string name="not_specified">Təyin edilməyib</string>
+    <string name="recommended_nproducts">Tövsiyə edilən \nMəhsullar</string>
+    <string name="we_recommend_the_best_for_you">Biz sizin üçün ən yaxşı olanını tövsiyə edirik</string>
+    <string name="login_with_google">Google ilə daxil ol</string>
+    <string name="login_with_facebook">Facebook ilə daxil ol</string>
+    <string name="or">VƏ YA</string>
+    <string name="succesfully_sign_in">Uğurla giriş edildi</string>
+    <string name="succesfully_create_user">Uğurla istifadəçi yaradıldı</string>
+    <string name="added_to_cart">Səbətə əlavə edildi</string>
+    <string name="result">%1$d Nəticə</string>
+    <string name="succesfully_log_out">Uğurla çıxış edildi</string>
+    <string name="language_selected_as">%1$s olaraq dil seçildi</string>
+    <string name="no_internet_connection">İnternet əlaqəsi yoxdur</string>
+    <string name="please_check_your_connection">Xahiş edirik əlaqənizi yoxlayın</string>
+
+
+
+    <string-array name="gender">
+        <item>Kişi</item>
+        <item>Qadın</item>
+        <item>Digər</item>
+    </string-array>
+
+    <string-array name="language">
+        <item>Dillər</item>
+        <item>Aze</item>
+        <item>İng</item>
+    </string-array>
+
+    <array name="initial_slider_values">
+        <item>200.0</item>
+        <item>800.0</item>
+    </array>
+
+
+    <string-array name="product_categories">
+        <item>smartphones</item>
+        <item>laptops</item>
+        <item>fragrances</item>
+        <item>skincare</item>
+        <item>groceries</item>
+        <item>home-decoration</item>
+        <item>furniture</item>
+        <item>tops</item>
+        <item>womens-dresses</item>
+        <item>womens-shoes</item>
+        <item>mens-shirts</item>
+        <item>mens-shoes</item>
+        <item>mens-watches</item>
+        <item>womens-watches</item>
+        <item>womens-bags</item>
+        <item>womens-jewellery</item>
+        <item>sunglasses</item>
+        <item>automotive</item>
+        <item>motorcycle</item>
+        <item>lighting</item>
+    </string-array>
+
+</resources>

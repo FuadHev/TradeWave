@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment" >
+    tools:context="ui.profile.ProfileFragment" >
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -26,7 +26,7 @@
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
             android:padding="17dp"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textColor="@color/text_color"
             android:textSize="12sp"
             app:cornerRadius="0dp"
@@ -37,7 +37,9 @@
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
             app:rippleColor="@color/blue_light"
-            app:strokeWidth="0dp"/>
+            app:strokeWidth="0dp">
+
+        </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOrder"
@@ -47,7 +49,7 @@
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
             android:padding="17dp"
-            android:text="Order"
+            android:text="@string/order"
             android:textColor="@color/text_color"
             android:textSize="12sp"
             app:cornerRadius="0dp"
@@ -58,7 +60,9 @@
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
             app:rippleColor="@color/blue_light"
-            app:strokeWidth="0dp" />
+            app:strokeWidth="0dp">
+
+        </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddress"
@@ -68,7 +72,7 @@
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
             android:padding="17dp"
-            android:text="Address"
+            android:text="@string/address"
             android:textColor="@color/text_color"
             android:textSize="12sp"
             app:cornerRadius="0dp"
@@ -79,7 +83,9 @@
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
             app:rippleColor="@color/blue_light"
-            app:strokeWidth="0dp" />
+            app:strokeWidth="0dp">
+
+        </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPayment"
@@ -89,7 +95,7 @@
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
             android:padding="17dp"
-            android:text="Payment"
+            android:text="@string/payment"
             android:textColor="@color/text_color"
             android:textSize="12sp"
             app:cornerRadius="0dp"
@@ -99,7 +105,49 @@
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
             app:rippleColor="@color/blue_light"
-            app:strokeWidth="0dp" />
+            app:strokeWidth="0dp">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="clip_vertical|start|center_vertical"
+                android:text="@string/app_language"
+                android:textColor="@color/text_color"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/dropdown_item" />
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/baseline_language_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
@@ -113,7 +161,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/poppins_bold"
         android:gravity="clip_vertical|start|center_vertical"
-        android:text="Account"
+        android:text="@string/account"
         android:textColor="@color/text_color"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,4 +177,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
