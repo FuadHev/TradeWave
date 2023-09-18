@@ -6,6 +6,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.fuadhev.tradewave.R
 import com.fuadhev.tradewave.common.base.BaseFragment
+import com.fuadhev.tradewave.common.utils.Constants
+import com.fuadhev.tradewave.common.utils.Constants.TOKEN_USER
 import com.fuadhev.tradewave.common.utils.Extensions.alpha
 import com.fuadhev.tradewave.common.utils.Extensions.gone
 import com.fuadhev.tradewave.common.utils.Extensions.showMessage
@@ -33,6 +35,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             handleState(it)
         }
     }
+
+
 
     override fun onCreateFinish() {
         setAdapter()
@@ -102,6 +106,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                     lyMain.alpha(1f)
                     loadingView.gone()
                 }
+
+                else -> {}
             }
         }
     }

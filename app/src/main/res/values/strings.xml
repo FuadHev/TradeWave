@@ -100,7 +100,9 @@
     <string name="language_selected_as">Language selected as %1$s</string>
     <string name="no_internet_connection">No Internet Connection</string>
     <string name="please_check_your_connection">Please check your connection</string>
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="credit_cart_or_debit">Credit Cart Or Debit</string>
+    <string name="add_card">Add Card</string>
 
     <string-array name="gender">
         <item>Male</item>
@@ -143,5 +145,6 @@
         <item>motorcycle</item>
         <item>lighting</item>
     </string-array>
+
 
 </resources>

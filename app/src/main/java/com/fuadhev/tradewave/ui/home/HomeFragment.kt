@@ -78,7 +78,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 }
 
                 is HomeUiState.SuccessCategoryData -> {
+
+
                     categoryAdapter.differ.submitList(it.list)
+
+
                     loading2.gone()
                 }
 

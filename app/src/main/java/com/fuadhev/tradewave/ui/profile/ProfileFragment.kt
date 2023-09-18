@@ -2,6 +2,7 @@ package com.fuadhev.tradewave.ui.profile
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             btnOrder.setOnClickListener {
                 findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToOrderFragment())
             }
+            btnPayment.setOnClickListener {
+                findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToAddPaymentFragment())
+            }
+
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>,

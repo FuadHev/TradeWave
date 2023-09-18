@@ -135,6 +135,7 @@
             android:drawableStart="@drawable/google_ic"
             android:fontFamily="@font/poppins_bold"
             android:padding="16dp"
+
             android:paddingStart="20dp"
             android:text="Login with Google"
             android:textColor="@color/text_color"

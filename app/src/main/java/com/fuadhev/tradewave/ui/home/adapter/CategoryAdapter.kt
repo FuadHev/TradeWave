@@ -16,20 +16,13 @@ import com.fuadhev.tradewave.domain.model.CategoryUiModel
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     var onClick: (String) -> Unit = {}
-
-
-
-
-
     inner class CategoryViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CategoryUiModel) {
-            Log.e("item", item.name )
+            Log.e("item", item.name)
             with(binding){
-
                 category = item
                 executePendingBindings()
-
             }
 
 
@@ -39,30 +32,17 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
 
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val view = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoryViewHolder(view)
     }
-
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
 
-
-
-
-
-
     }
-
-//    fun update(list:ArrayList<CategoryUiModel>){
-//        this.
-//        notifyDataSetChanged()
-//    }
 
     object OfferDiffUtilCallback : DiffUtil.ItemCallback<CategoryUiModel>() {
         override fun areItemsTheSame(oldItem: CategoryUiModel, newItem: CategoryUiModel): Boolean {

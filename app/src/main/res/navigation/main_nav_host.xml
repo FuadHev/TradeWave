@@ -145,10 +145,15 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/profileFragment" />
         <action
             android:id="@+id/action_profileFragment_to_orderFragment"
-            app:destination="@id/orderFragment" />
+            app:destination="@id/orderFragment"
+            app:popUpTo="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addPaymentFragment"
+            app:destination="@id/addPaymentFragment" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -161,6 +166,11 @@
         <action
             android:id="@+id/action_accountFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editAccountFragment"
@@ -181,4 +191,18 @@
         android:name="com.fuadhev.tradewave.ui.cart.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart"/>
+    <fragment
+        android:id="@+id/addPaymentFragment"
+        android:name="com.fuadhev.tradewave.ui.profile.payment.AddPaymentFragment"
+        android:label="fragment_add_payment"
+        tools:layout="@layout/fragment_add_payment" >
+        <action
+            android:id="@+id/action_addPaymentFragment_to_creditCardFragment"
+            app:destination="@id/creditCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditCardFragment"
+        android:name="com.fuadhev.tradewave.ui.profile.payment.creditcard.CreditCardFragment"
+        android:label="fragment_credit_card"
+        tools:layout="@layout/fragment_credit_card" />
 </navigation>

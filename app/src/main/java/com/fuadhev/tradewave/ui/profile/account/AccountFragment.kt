@@ -53,7 +53,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     override fun setupListeners() {
         with(binding) {
             btnBack.setOnClickListener {
-                findNavController().popBackStack()
+                findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToProfileFragment())
             }
             tvName.setOnClickListener {
                 this@AccountFragment.toEditFragment(InfoEnum.NAME)
