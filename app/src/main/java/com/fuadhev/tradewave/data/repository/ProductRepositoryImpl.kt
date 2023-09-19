@@ -9,10 +9,15 @@ import com.fuadhev.tradewave.data.local.dto.FavoriteDTO
 import com.fuadhev.tradewave.data.network.api.ProductApiService
 import com.fuadhev.tradewave.data.network.dto.ProductDTO
 import com.fuadhev.tradewave.data.network.dto.ProductsDTO
+import com.fuadhev.tradewave.domain.model.CardUiModel
 import com.fuadhev.tradewave.domain.model.CategoryUiModel
 import com.fuadhev.tradewave.domain.model.OfferUiModel
 import com.fuadhev.tradewave.domain.repository.ProductRepository
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -153,6 +158,35 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Success(cartDAO.getCart()))
     }.catch {
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }
+
+    override suspend fun getCards(): Flow<Resource<List<CardUiModel>>> = flow {
+        emit(Resource.Loading)
+        val cardSnapshot=firestore.collection("cards").document(Firebase.auth.currentUser?.uid!!).get().await()
+
+        val snapshots=cardSnapshot.data as HashMap<*,*>
+        for (snapshot in snapshots){
+            val card=snapshot.value
+            Log.e("card", card.toString())
+        }
+
+    }
+
+    override fun addCard(card: CardUiModel): Flow<Resource<Boolean>> = flow{
+        emit(Resource.Loading)
+        val hmap= hashMapOf<String,CardUiModel>()
+        hmap[card.id]=card
+        firestore.collection("cards").document(Firebase.auth.currentUser?.uid!!).set(hmap,
+            SetOptions.merge())
+
+        emit(Resource.Success(true))
+
+    }.catch {
+        emit(Resource.Error(it.localizedMessage?:"Error 404"))
+    }
+
+    override fun deleteCard(card: CardUiModel): Flow<Resource<Boolean>> = flow{
+
     }
 
 }

@@ -103,6 +103,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="credit_cart_or_debit">Credit Cart Or Debit</string>
     <string name="add_card">Add Card</string>
+    <string name="enter_card_number">Enter Card Number</string>
+    <string name="card_number">Card Number</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="security_code">Security Code</string>
 
     <string-array name="gender">
         <item>Male</item>

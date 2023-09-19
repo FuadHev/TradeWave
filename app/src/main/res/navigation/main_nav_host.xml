@@ -204,5 +204,14 @@
         android:id="@+id/creditCardFragment"
         android:name="com.fuadhev.tradewave.ui.profile.payment.creditcard.CreditCardFragment"
         android:label="fragment_credit_card"
-        tools:layout="@layout/fragment_credit_card" />
+        tools:layout="@layout/fragment_credit_card" >
+        <action
+            android:id="@+id/action_creditCardFragment_to_addCardFragment"
+            app:destination="@id/addCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.fuadhev.tradewave.ui.profile.payment.addCard.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
 </navigation>
