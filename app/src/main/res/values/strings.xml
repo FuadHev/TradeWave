@@ -107,6 +107,7 @@
     <string name="card_number">Card Number</string>
     <string name="expiration_date">Expiration Date</string>
     <string name="security_code">Security Code</string>
+    <string name="there_is_no_card">There is no card</string>
 
     <string-array name="gender">
         <item>Male</item>

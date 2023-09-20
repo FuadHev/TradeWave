@@ -164,12 +164,22 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Loading)
         val cardSnapshot=firestore.collection("cards").document(Firebase.auth.currentUser?.uid!!).get().await()
 
+        val cardList=ArrayList<CardUiModel>()
         val snapshots=cardSnapshot.data as HashMap<*,*>
         for (snapshot in snapshots){
-            val card=snapshot.value
-            Log.e("card", card.toString())
+            val card=snapshot.value as HashMap<*,*>
+            val id= card["id"] as String
+            val cardNumber= card["cardNumber"] as String
+            val cardHolder= card["cardHolder"] as String
+            val securityCode= card["securityCode"] as String
+            val expirationDate= card["expirationDate"] as String
+            val cardUiModel=CardUiModel(id,cardNumber,expirationDate,securityCode,cardHolder)
+            cardList.add(cardUiModel)
         }
+        emit(Resource.Success(cardList))
 
+    }.catch {
+        emit(Resource.Error(it.localizedMessage?:""))
     }
 
     override fun addCard(card: CardUiModel): Flow<Resource<Boolean>> = flow{

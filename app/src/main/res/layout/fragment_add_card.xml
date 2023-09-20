@@ -255,7 +255,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/et_background"
-            android:hint="@string/enter_card_number"
+            android:hint="Enter Card Holder"
             android:inputType="textEmailAddress"
             android:textColor="@color/text_color" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -273,5 +273,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/black" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

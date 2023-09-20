@@ -133,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@{card.cardNumber}"
+                    android:text="@{card.expirationDate}"
                     android:textColor="@color/white"
                     android:fontFamily="@font/poppins_bold"
                     android:letterSpacing="0.05"
